@@ -1,13 +1,19 @@
 // echo python code
 pipeline {
-    agent any
+    agent {
+      docker {
+        image 'python:3'
+        label 'my-build-agent'
+      }
+    }
     stages {
-        stage('Python') {
+        stage('Test') {
             steps {
-                sh 'python --version'
-                sh 'python test.py'
+              sh """
+              python --version
+              python test.py
+              """
             }
         }
     }
 }
-```
