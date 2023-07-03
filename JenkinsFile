@@ -17,3 +17,19 @@ pipeline {
         }
     }
 }
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                sh 'python --version'
+                sh 'python test.py'
+                
+            }
+        }
+    }
+}
