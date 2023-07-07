@@ -1,7 +1,9 @@
 // echo python code
 pipeline {
     agent {
-        label 'python'
+        node {
+            label 'python'
+        }
     }
     stages {
         stage('Test') {
