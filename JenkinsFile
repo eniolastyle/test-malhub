@@ -1,16 +1,14 @@
 // echo python code
 pipeline {
     agent {
-        node {
-            label 'python'
-        }
+        any
     }
     stages {
         stage('Test') {
             steps {
               sh """
-              python --version
-              python test.py
+              python3 --version
+              python3 test.py
               """
             }
         }
